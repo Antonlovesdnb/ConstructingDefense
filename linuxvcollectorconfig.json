@@ -1,0 +1,22 @@
+{
+    "api.version":"v1",
+    "sources":[{
+      "name":"LinuxV",
+      "category":"linux_laurel",
+      "hostName":"LinuxV",
+      "automaticDateParsing":true,
+      "multilineProcessingEnabled":true,
+      "useAutolineMatching":true,
+      "forceTimeZone":false,
+      "timeZone":"UTC",
+      "filters":[],
+      "cutoffTimestamp":0,
+      "encoding":"UTF-8",
+      "fields":{
+        
+      },
+      "denylist":[],
+      "pathExpression":"/var/log/laurel/audit.log",
+      "sourceType":"LocalFile"
+    }]
+  }
