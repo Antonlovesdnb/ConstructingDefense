@@ -1,0 +1,38 @@
+{
+  "api.version":"v1",
+  "source":{
+    "name":"WIN11V-WinEvents",
+    "description":"Windows Events",
+    "category":"winevents",
+    "automaticDateParsing":true,
+    "multilineProcessingEnabled":false,
+    "useAutolineMatching":false,
+    "forceTimeZone":false,
+    "filters":[{
+      "filterType":"Exclude",
+      "name":"Exclude Noisy Shares",
+      "regexp":"\\\\\\\\\\*\\\\C\\$"
+    },{
+      "filterType":"Exclude",
+      "name":"Exclude Nosiy Shares 2",
+      "regexp":"\\\\\\\\\\*\\\\ADMIN\\$"
+    },{
+      "filterType":"Exclude",
+      "name":"Exclude Noisy Shares 3",
+      "regexp":"\\\\\\\\\\*\\\\SYSVOL"
+    }],
+    "cutoffTimestamp":1698593593000,
+    "encoding":"UTF-8",
+    "fields":{
+      
+    },
+    "allowlist":"",
+    "renderMessages":false,
+    "logNames":["Security","Microsoft-Windows-Sysmon/Operational"],
+    "denylist":"",
+    "eventFormat":1,
+    "eventMessage":1,
+    "sidStyle":2,
+    "sourceType":"LocalWindowsEventLog"
+  }
+}
