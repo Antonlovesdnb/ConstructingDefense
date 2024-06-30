@@ -122,9 +122,6 @@
 ## KExec usage (all actions)
 -a always,exit -F arch=b64 -S kexec_load -k KEXEC
 
-## Special files
-#-a always,exit -F arch=b64 -S mknod -S mknodat -k specialfiles
-
 ## Mount operations (only attributable)
 -a always,exit -F arch=b64 -S mount -S umount2 -F auid!=-1 -k mount
 
@@ -192,12 +189,6 @@
 ### Detect Remote Shell Use
 -a always,exit -F arch=b64 -F exe=/bin/bash -F success=1 -S connect -k "remote_shell"
 -a always,exit -F arch=b64 -F exe=/usr/bin/bash -F success=1 -S connect -k "remote_shell"
-
-### Successful IPv4 Connections
-#-a always,exit -F arch=b64 -S connect -F a2=16 -F success=1 -F key=network_connect_4
-
-### Successful IPv6 Connections
-#-a always,exit -F arch=b64 -S connect -F a2=28 -F success=1 -F key=network_connect_6
 
 ### Changes to other files
 -w /etc/hosts -p wa -k network_modifications
@@ -463,15 +454,6 @@
 ### The purpose of this rule is to detect when an admin may be abusing power by looking in user's home dir.
 -a always,exit -F dir=/home -F uid=0 -F auid>=1000 -F auid!=-1 -C auid!=obj_uid -k power_abuse
 
-# Socket Creations
-# will catch both IPv4 and IPv6
-
-#-a always,exit -F arch=b32 -S socket -F a0=2  -k network_socket_created
-#-a always,exit -F arch=b64 -S socket -F a0=2  -k network_socket_created
-
-#-a always,exit -F arch=b32 -S socket -F a0=10 -k network_socket_created
-#-a always,exit -F arch=b64 -S socket -F a0=10 -k network_socket_created
-
 # Software Management ---------------------------------------------------------
 
 # RPM (Redhat/CentOS)
@@ -610,18 +592,6 @@
 -w /usr/bin/semgrep -p x -k string_search
 ### macOS
 -w /usr/local/bin/semgrep -p x -k string_search
-
-## Docker
-#-w /usr/bin/dockerd -k docker
-#-w /usr/bin/docker -k docker
-#-w /usr/bin/docker-containerd -k docker
-#-w /usr/bin/docker-runc -k docker
-#-w /var/lib/docker -p wa -k docker
-#-w /etc/docker -k docker
-#-w /etc/sysconfig/docker -k docker
-#-w /etc/sysconfig/docker-storage -k docker
-#-w /usr/lib/systemd/system/docker.service -k docker
-#-w /usr/lib/systemd/system/docker.socket -k docker
 
 -w /usr/local/bin/kubectl -k kubectl
 
