@@ -623,7 +623,7 @@
 #-w /usr/lib/systemd/system/docker.service -k docker
 #-w /usr/lib/systemd/system/docker.socket -k docker
 
--w /usr/local/bin/kubectl -k kubectl
+-w /usr/local/bin/kubectl -p x -k kubectl
 
 ## Virtualization stuff
 -w /usr/bin/qemu-system-x86_64 -p x -k qemu-system-x86_64
