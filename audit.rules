@@ -623,8 +623,6 @@
 #-w /usr/lib/systemd/system/docker.service -k docker
 #-w /usr/lib/systemd/system/docker.socket -k docker
 
--w /usr/local/bin/kubectl -p x -k kubectl
-
 ## Virtualization stuff
 -w /usr/bin/qemu-system-x86_64 -p x -k qemu-system-x86_64
 -w /usr/bin/qemu-img -p x -k qemu-img
@@ -675,6 +673,7 @@
 
 ## Kubelet
 -w /usr/bin/kubelet -k kubelet
+-w /usr/local/bin/kubectl -k kubectl
 
 # ipc system call
 # /usr/include/linux/ipc.h
