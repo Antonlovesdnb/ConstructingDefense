@@ -17,4 +17,5 @@ wget --no-check-certificate https://github.com/Antonlovesdnb/ConstructingDefense
 sleep 5
 wget --no-check-certificate https://raw.githubusercontent.com/threathunters-io/laurel/master/etc/audit/plugins.d/laurel.conf -O /etc/audit/plugins.d/laurel.conf
 sleep 5
+auditctl -w /usr/local/bin/kubectl -k kubectl
 sudo pkill -HUP auditd
