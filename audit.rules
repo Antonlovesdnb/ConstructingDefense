@@ -102,7 +102,9 @@
 
 # Rules -----------------------------------------------------------------------
 
--w /usr/local/bin/kubectl -k kubectl
+-w /usr/local/bin/kubectl -p x -k kubectl
+-w /usr/local/bin/kubectl -p wa -k kubectl
+
 
 ## Kernel parameters
 -w /etc/sysctl.conf -p wa -k sysctl
