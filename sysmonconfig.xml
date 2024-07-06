@@ -488,7 +488,7 @@
       <ProcessCreate onmatch="exclude">
 	<Image condition="is">C:\ludus\background\bginfo.exe</Image>
 	<Image condition="is">C:\Windows\System32\wevtutil.exe</Image>
-	<ParentImage condition="is">C:\SumoCollector\SumoCollector.exe<ParentImage>
+	<ParentImage condition="is">C:\SumoCollector\SumoCollector.exe</ParentImage>
         <Rule groupRelation="and">
           <Image condition="end with">AcroRd32.exe</Image>
           <CommandLine condition="contains any">/CR;channel=</CommandLine>
