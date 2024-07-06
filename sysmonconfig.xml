@@ -486,6 +486,9 @@
     <!-- Event ID 1 == Process Creation - Excludes -->
     <RuleGroup groupRelation="or">
       <ProcessCreate onmatch="exclude">
+	<Image condition="is">C:\ludus\background\bginfo.exe</Image>
+	<Image condition="is">C:\Windows\System32\wevtutil.exe</Image>
+	<ParentImage condition="is">C:\SumoCollector\SumoCollector.exe<ParentImage>
         <Rule groupRelation="and">
           <Image condition="end with">AcroRd32.exe</Image>
           <CommandLine condition="contains any">/CR;channel=</CommandLine>
@@ -1137,6 +1140,9 @@
           <Image condition="is">C:\Windows\System32\svchost.exe</Image>
           <ImageLoaded condition="is">C:\Windows\System32\perfctrs.dll</ImageLoaded>
         </Rule>
+	<Image condition="is">C:\ludus\background\bginfo.exe</Image>
+	<Image condition="is">C:\Windows\Microsoft.NET\Framework\v4.0.30319\mscorsvw.exe</Image>
+	<Image condition="is">C:\Windows\System32\svchost.exe</Image>
       </ImageLoad>
     </RuleGroup>
     <!-- Event ID 8 == CreateRemoteThread - Excludes -->
@@ -1254,9 +1260,12 @@
     <!-- Event ID 10 == ProcessAccess - Excludes -->
     <RuleGroup groupRelation="or">
       <ProcessAccess onmatch="exclude">
-		<SourceImage condition="end with">java.exe</SourceImage>
-		<SourceImage condition="is">C:\Program Files\Sumo Logic Collector\jre\bin\java.exe</SourceImage>
-		<SourceImage condition="is">C:\Users\Administrator\AppData\Local\Microsoft\OneDrive\Update\OneDriveSetup.exe</SourceImage>
+	<TargetImage condition="is">C:\ludus\background\bginfo.exe</TargetImage>
+	<TargetImage condition="is">C:\Windows\system32\wevtutil.exe<TargetImage>
+	<SourceImage condition="is">C:\SumoCollector\SumoCollector.exe<SourceImage>
+	<SourceImage condition="end with">java.exe</SourceImage>
+	<SourceImage condition="is">C:\Program Files\Sumo Logic Collector\jre\bin\java.exe</SourceImage>
+	<SourceImage condition="is">C:\Users\Administrator\AppData\Local\Microsoft\OneDrive\Update\OneDriveSetup.exe</SourceImage>
         <SourceImage condition="is">C:\Program Files\Adobe\Adobe Creative Cloud Experience\libs\node.exe</SourceImage>
         <SourceImage condition="contains all">C:\Program Files;\Common Files\Adobe\AdobeGCClient\AGMService.exe</SourceImage>
         <SourceImage condition="is">C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.exe</SourceImage>
@@ -1494,10 +1503,14 @@
     <!-- Event ID 11 == FileCreate - Excludes -->
     <RuleGroup groupRelation="or">
       <FileCreate onmatch="exclude">
-		<Image condition="is">C:\Windows\system32\svchost.exe</Image>
-		<Image condition="is">C:\Windows\System32\svchost.exe</Image>
-		<Image condition="is">C:\Windows\uus\AMD64\wuaucltcore.exe</Image>
-		<Image condition="is">C:\Windows\Explorer.EXE</Image>
+	<TargetFileName condition="end with">ngenlock.dat</TargetFileName>
+	<TargetFileName condition="is">C:\Users\localuser\AppData\Local\Microsoft\Windows\PowerShell\StartupProfileData-NonInteractive</TargetFileName>
+      	<Image condition="end with">mscorsvw.exe</Image>
+	<Image condition="is">C:\Windows\System32\poqexec.exe</Image
+	<Image condition="is">C:\Windows\system32\svchost.exe</Image>
+	<Image condition="is">C:\Windows\System32\svchost.exe</Image>
+	<Image condition="is">C:\Windows\uus\AMD64\wuaucltcore.exe</Image>
+	<Image condition="is">C:\Windows\Explorer.EXE</Image>
         <Image condition="is">C:\Program Files (x86)\Dell\CommandUpdate\InvColPC.exe</Image>
         <Rule groupRelation="and">
           <Image condition="is">C:\Program Files\Elastic\Endpoint\elastic-endpoint.exe</Image>
