@@ -1506,7 +1506,7 @@
 	<TargetFileName condition="end with">ngenlock.dat</TargetFileName>
 	<TargetFileName condition="is">C:\Users\localuser\AppData\Local\Microsoft\Windows\PowerShell\StartupProfileData-NonInteractive</TargetFileName>
       	<Image condition="end with">mscorsvw.exe</Image>
-	<Image condition="is">C:\Windows\System32\poqexec.exe</Image
+	<Image condition="is">C:\Windows\System32\poqexec.exe</Image>
 	<Image condition="is">C:\Windows\system32\svchost.exe</Image>
 	<Image condition="is">C:\Windows\System32\svchost.exe</Image>
 	<Image condition="is">C:\Windows\uus\AMD64\wuaucltcore.exe</Image>
