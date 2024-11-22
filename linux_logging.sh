@@ -5,9 +5,9 @@ sleep 1
 wget --no-check-certificate https://github.com/Antonlovesdnb/ConstructingDefense/raw/main/audit.rules -O /etc/audit/rules.d/audit.rules
 sleep 5
 systemctl restart auditd.service
-wget --no-check-certificate https://github.com/threathunters-io/laurel/releases/download/v0.6.2/laurel-v0.6.2-x86_64-glibc.tar.gz
+wget --no-check-certificate https://github.com/threathunters-io/laurel/releases/download/v0.6.3/laurel-v0.6.3-x86_64-musl.tar.gz
 sleep 5
-tar xzf laurel-v0.6.2-x86_64-glibc.tar.gz
+tar xzf laurel-v0.6.3-x86_64-musl.tar.gz
 sleep 5
 install -m755 laurel /usr/local/sbin/laurel
 sleep 5
